@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Sparkles, DollarSign, ArrowRight } from 'lucide-react';
 import MoneyFlowAnimation from '../components/MoneyFlowAnimation';
 import productsData from '../data/products.json';
+import cocaImg from '../assets/coca.png';
+import pepsiImg from '../assets/pepsi.png';
 
 export default function Act1({ isEnglish, onContinue }) {
   const cokePrice = productsData.find(p => p.id === 'coca_cola')?.price || 13000;
@@ -78,11 +80,7 @@ export default function Act1({ isEnglish, onContinue }) {
 
               {/* Product Mock Representation */}
               <div className="my-10 flex flex-col items-center">
-                <div className="w-16 h-32 bg-gradient-to-b from-red-600 to-red-800 rounded-xl relative shadow-2xl flex items-center justify-center border border-red-500/40">
-                  <div className="absolute top-2 w-full h-1 bg-white/20" />
-                  <span className="text-white font-black text-sm tracking-widest rotate-90 origin-center whitespace-nowrap">COCA-COLA</span>
-                  <div className="absolute bottom-2 w-full h-2 bg-black/20" />
-                </div>
+                <img src={cocaImg} className="h-32 object-contain filter drop-shadow-[0_10px_20px_rgba(239,68,68,0.3)] group-hover:scale-105 transition-transform duration-300" alt="Coca-Cola" />
                 <h3 className="text-xl font-bold mt-6 text-gray-100">Coca-Cola</h3>
                 <p className="text-xs text-gray-400 italic mt-1">"{isEnglish ? "Real Magic" : "Phép màu đích thực"}"</p>
               </div>
@@ -110,11 +108,7 @@ export default function Act1({ isEnglish, onContinue }) {
 
               {/* Product Mock Representation */}
               <div className="my-10 flex flex-col items-center">
-                <div className="w-16 h-32 bg-gradient-to-b from-blue-600 to-blue-800 rounded-xl relative shadow-2xl flex items-center justify-center border border-blue-500/40">
-                  <div className="absolute top-2 w-full h-1 bg-white/20" />
-                  <span className="text-white font-black text-sm tracking-widest rotate-90 origin-center whitespace-nowrap">PEPSICO</span>
-                  <div className="absolute bottom-2 w-full h-2 bg-black/20" />
-                </div>
+                <img src={pepsiImg} className="h-32 object-contain filter drop-shadow-[0_10px_20px_rgba(59,130,246,0.3)] group-hover:scale-105 transition-transform duration-300" alt="PepsiCo" />
                 <h3 className="text-xl font-bold mt-6 text-gray-100">PepsiCo</h3>
                 <p className="text-xs text-gray-400 italic mt-1">"{isEnglish ? "Thirsty for More" : "Đã quá Pepsi ơi"}"</p>
               </div>

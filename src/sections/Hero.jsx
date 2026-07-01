@@ -11,6 +11,7 @@ import {
   Activity
 } from 'lucide-react';
 import CanvasParticles from '../components/CanvasParticles';
+import cocaImg from '../assets/coca.png';
 
 const scenes = {
   en: [
@@ -55,11 +56,7 @@ const scenes = {
       visual: "connect_brands"
     },
     {
-      text: "Three names command the global network...",
-      visual: "big_reveal"
-    },
-    {
-      text: "", // Stage 11 is Final Hero
+      text: "", // Stage 10 is Final Hero
       visual: "final_hero"
     }
   ],
@@ -105,10 +102,6 @@ const scenes = {
       visual: "connect_brands"
     },
     {
-      text: "Ba cái tên chi phối mạng lưới sở hữu toàn cầu...",
-      visual: "big_reveal"
-    },
-    {
       text: "",
       visual: "final_hero"
     }
@@ -138,7 +131,7 @@ export default function Hero({ onStartClick, isEnglish }) {
       if (totalHeight <= 0) return;
 
       const progress = Math.max(0, Math.min(1, -rect.top / totalHeight));
-      const totalStages = 12;
+      const totalStages = 11;
       const stage = Math.min(totalStages - 1, Math.floor(progress * totalStages));
       setActiveStage(stage);
     };
@@ -158,7 +151,7 @@ export default function Hero({ onStartClick, isEnglish }) {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[950vh] bg-[#0B1020] overflow-visible"
+      className="relative w-full h-[880vh] bg-[#0B1020] overflow-visible"
     >
       {/* Sticky Frame representing 100vh of viewing space */}
       <section
@@ -210,8 +203,8 @@ export default function Hero({ onStartClick, isEnglish }) {
           </motion.div>
         )}
 
-        {/* Narrative & Interactive Visual Canvas (Stages 1-10) */}
-        {activeStage > 0 && activeStage < 11 && (
+        {/* Narrative & Interactive Visual Canvas (Stages 1-9) */}
+        {activeStage > 0 && activeStage < 10 && (
           <div className="flex-grow w-full max-w-4xl flex flex-col justify-center items-center relative z-10 mt-12">
 
             {/* Visual Screen Container (45vh height) */}
@@ -236,15 +229,13 @@ export default function Hero({ onStartClick, isEnglish }) {
                       $
                     </motion.div>
 
-                    <motion.div
+                    <motion.img
                       initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 0.8, scale: 1 }}
-                      className="w-14 h-24 bg-gradient-to-b from-red-600 to-red-800 rounded-xl border border-red-500/40 relative shadow-2xl flex items-center justify-center mt-2"
-                    >
-                      <div className="absolute top-2 w-full h-1 bg-white/20" />
-                      <span className="text-white font-black text-[9px] tracking-widest rotate-90 whitespace-nowrap">COCA-COLA</span>
-                      <div className="absolute bottom-2 w-full h-2 bg-black/20" />
-                    </motion.div>
+                      animate={{ opacity: 1, scale: 1 }}
+                      src={cocaImg}
+                      className="h-28 object-contain filter drop-shadow-[0_10px_15px_rgba(239,68,68,0.2)] mt-2"
+                      alt="Coca-Cola"
+                    />
                   </motion.div>
                 )}
 
@@ -405,8 +396,8 @@ export default function Hero({ onStartClick, isEnglish }) {
                   </motion.div>
                 )}
 
-                {/* Stages 8, 9, 10: Brand & Shareholders Graph */}
-                {(activeStage === 8 || activeStage === 9 || activeStage === 10) && (
+                {/* Stages 8, 9: Brand Graph & Mystery Connection */}
+                {(activeStage === 8 || activeStage === 9) && (
                   <motion.div
                     key="ownership-reveal"
                     initial={{ opacity: 0 }}
@@ -425,62 +416,30 @@ export default function Hero({ onStartClick, isEnglish }) {
                           </linearGradient>
                         </defs>
 
-                        {/* Connection Lines from Shareholders (shown in Stage 10) */}
-                        {activeStage >= 10 && (
-                          <g>
-                            {/* BlackRock (250, 90) -> Coca-Cola (200, 310) */}
-                            <motion.line x1="250" y1="90" x2="200" y2="310" stroke="url(#g-line)" strokeWidth="2.5" strokeDasharray="6 6" animate={{ strokeDashoffset: [0, -32] }} transition={{ repeat: Infinity, duration: 4, ease: "linear" }} />
-                            {/* BlackRock (250, 90) -> PepsiCo (600, 310) */}
-                            <motion.line x1="250" y1="90" x2="600" y2="310" stroke="url(#g-line)" strokeWidth="2.5" strokeDasharray="6 6" animate={{ strokeDashoffset: [0, -32] }} transition={{ repeat: Infinity, duration: 4, ease: "linear" }} />
-
-                            {/* Vanguard (400, 90) -> Coca-Cola (200, 310) */}
-                            <motion.line x1="400" y1="90" x2="200" y2="310" stroke="url(#g-line)" strokeWidth="2.5" strokeDasharray="6 6" animate={{ strokeDashoffset: [0, -32] }} transition={{ repeat: Infinity, duration: 3.5, ease: "linear" }} />
-                            {/* Vanguard (400, 90) -> PepsiCo (600, 310) */}
-                            <motion.line x1="400" y1="90" x2="600" y2="310" stroke="url(#g-line)" strokeWidth="2.5" strokeDasharray="6 6" animate={{ strokeDashoffset: [0, -32] }} transition={{ repeat: Infinity, duration: 3.5, ease: "linear" }} />
-
-                            {/* State Street (550, 90) -> Coca-Cola (200, 310) */}
-                            <motion.line x1="550" y1="90" x2="200" y2="310" stroke="url(#g-line)" strokeWidth="2.5" strokeDasharray="6 6" animate={{ strokeDashoffset: [0, -32] }} transition={{ repeat: Infinity, duration: 4.5, ease: "linear" }} />
-                            {/* State Street (550, 90) -> PepsiCo (600, 310) */}
-                            <motion.line x1="550" y1="90" x2="600" y2="310" stroke="url(#g-line)" strokeWidth="2.5" strokeDasharray="6 6" animate={{ strokeDashoffset: [0, -32] }} transition={{ repeat: Infinity, duration: 4.5, ease: "linear" }} />
-                          </g>
-                        )}
-
-                        {/* Shared connection line (Stage 9) */}
+                        {/* Connection Lines from Mystery Hub in Stage 9 */}
                         {activeStage === 9 && (
-                          <motion.path
-                            d="M 240 320 Q 400 240 560 320"
-                            fill="none"
-                            stroke="url(#g-line)"
-                            strokeWidth="2.5"
-                            strokeDasharray="6 6"
-                            animate={{ strokeDashoffset: [0, -32] }}
-                            transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-                          />
+                          <g>
+                            {/* Central Mystery Hub (400, 95) -> Coca-Cola (200, 310) */}
+                            <motion.line x1="400" y1="95" x2="200" y2="310" stroke="url(#g-line)" strokeWidth="2.5" strokeDasharray="6 6" animate={{ strokeDashoffset: [0, -32] }} transition={{ repeat: Infinity, duration: 3.5, ease: "linear" }} />
+                            {/* Central Mystery Hub (400, 95) -> PepsiCo (600, 310) */}
+                            <motion.line x1="400" y1="95" x2="600" y2="310" stroke="url(#g-line)" strokeWidth="2.5" strokeDasharray="6 6" animate={{ strokeDashoffset: [0, -32] }} transition={{ repeat: Infinity, duration: 3.5, ease: "linear" }} />
+                          </g>
                         )}
                       </svg>
 
-                      {/* Shareholders Row (Stage 10) */}
-                      {activeStage >= 10 && (
-                        <div className="absolute top-2 left-0 right-0 flex justify-center gap-3 md:gap-6 z-20">
-                          {[
-                            { name: "BlackRock", delay: 0.1 },
-                            { name: "Vanguard", delay: 0.4 },
-                            { name: "State Street", delay: 0.7 }
-                          ].map((sh, idx) => (
-                            <motion.div
-                              key={idx}
-                              initial={{ y: -30, opacity: 0, scale: 0.95 }}
-                              animate={{ y: 0, opacity: 1, scale: 1 }}
-                              transition={{ delay: sh.delay, duration: 0.7 }}
-                              className="glass-panel-glow-purple px-3 md:px-5 py-2 rounded-xl text-center text-xs font-bold text-purple-200 tracking-wider shadow-[0_0_15px_rgba(168,85,247,0.1)] font-mono"
-                            >
-                              {sh.name}
-                            </motion.div>
-                          ))}
-                        </div>
+                      {/* Central Mystery Node (Stage 9) */}
+                      {activeStage === 9 && (
+                        <motion.div
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ delay: 0.2, duration: 0.6 }}
+                          className="absolute top-2 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-purple-950/50 border border-purple-500/50 shadow-[0_0_20px_rgba(168,85,247,0.35)] flex items-center justify-center text-purple-300 font-extrabold text-lg z-20 animate-pulse font-mono"
+                        >
+                          ?
+                        </motion.div>
                       )}
 
-                      {/* Company Cards (Stage 8, 9, 10) */}
+                      {/* Company Cards (Stage 8, 9) */}
                       <div className="absolute bottom-4 left-0 right-0 flex justify-between px-2 md:px-8 w-full z-20">
                         {/* Left Brand: Coca-Cola */}
                         <motion.div
@@ -530,8 +489,8 @@ export default function Hero({ onStartClick, isEnglish }) {
           </div>
         )}
 
-        {/* Final Hero Cinematic Reveal Card (Stage 11) */}
-        {activeStage === 11 && (
+        {/* Final Hero Cinematic Reveal Card (Stage 10) */}
+        {activeStage === 10 && (
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -576,7 +535,7 @@ export default function Hero({ onStartClick, isEnglish }) {
 
         {/* Floating Side Dot Navigation (Progress Indicator) */}
         <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 flex flex-col gap-2.5 z-30">
-          {Array.from({ length: 12 }).map((_, i) => (
+          {Array.from({ length: 11 }).map((_, i) => (
             <div
               key={i}
               className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${i === activeStage
@@ -587,9 +546,9 @@ export default function Hero({ onStartClick, isEnglish }) {
           ))}
         </div>
 
-        {/* Bottom Scroll Indicator (Active for Stages 0 to 10) */}
+        {/* Bottom Scroll Indicator (Active for Stages 0 to 9) */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-gray-500 font-mono text-[9px] uppercase tracking-[0.2em] select-none pointer-events-none opacity-60">
-          {activeStage < 11 ? (
+          {activeStage < 10 ? (
             <>
               <motion.div
                 animate={{ y: [0, 6, 0] }}
