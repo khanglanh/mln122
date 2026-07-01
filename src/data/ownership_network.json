@@ -1,0 +1,54 @@
+{
+  "coca_cola": {
+    "nodes": [
+      { "id": "target", "label": "Coca-Cola Company", "type": "company", "depth": 0 },
+      { "id": "berkshire", "label": "Berkshire Hathaway", "type": "institutional", "depth": 1, "share": 9.2 },
+      { "id": "vanguard", "label": "Vanguard Group", "type": "institutional", "depth": 1, "share": 8.5 },
+      { "id": "blackrock", "label": "BlackRock, Inc.", "type": "institutional", "depth": 1, "share": 7.1 },
+      { "id": "statestreet", "label": "State Street Corp", "type": "institutional", "depth": 1, "share": 4.0 },
+      { "id": "retail", "label": "Public & Others", "type": "retail", "depth": 1, "share": 71.2 },
+      { "id": "vanguard_funds", "label": "Mutual Fund Owners", "type": "owner", "depth": 2, "share": 100.0, "target": "vanguard" },
+      { "id": "vanguard_br", "label": "Vanguard Group", "type": "owner", "depth": 2, "share": 9.0, "target": "blackrock" },
+      { "id": "statestreet_br", "label": "State Street Corp", "type": "owner", "depth": 2, "share": 4.2, "target": "blackrock" },
+      { "id": "vanguard_ss", "label": "Vanguard Group", "type": "owner", "depth": 2, "share": 8.2, "target": "statestreet" },
+      { "id": "blackrock_ss", "label": "BlackRock, Inc.", "type": "owner", "depth": 2, "share": 6.8, "target": "statestreet" }
+    ],
+    "links": [
+      { "source": "berkshire", "target": "target", "value": 9.2 },
+      { "source": "vanguard", "target": "target", "value": 8.5 },
+      { "source": "blackrock", "target": "target", "value": 7.1 },
+      { "source": "statestreet", "target": "target", "value": 4.0 },
+      { "source": "retail", "target": "target", "value": 71.2 },
+      { "source": "vanguard_funds", "target": "vanguard", "value": 100.0 },
+      { "source": "vanguard_br", "target": "blackrock", "value": 9.0 },
+      { "source": "statestreet_br", "target": "blackrock", "value": 4.2 },
+      { "source": "vanguard_ss", "target": "statestreet", "value": 8.2 },
+      { "source": "blackrock_ss", "target": "statestreet", "value": 6.8 }
+    ]
+  },
+  "pepsi": {
+    "nodes": [
+      { "id": "target", "label": "PepsiCo, Inc.", "type": "company", "depth": 0 },
+      { "id": "vanguard", "label": "Vanguard Group", "type": "institutional", "depth": 1, "share": 9.1 },
+      { "id": "blackrock", "label": "BlackRock, Inc.", "type": "institutional", "depth": 1, "share": 7.6 },
+      { "id": "statestreet", "label": "State Street Corp", "type": "institutional", "depth": 1, "share": 4.3 },
+      { "id": "retail", "label": "Public & Others", "type": "retail", "depth": 1, "share": 79.0 },
+      { "id": "vanguard_funds", "label": "Mutual Fund Owners", "type": "owner", "depth": 2, "share": 100.0, "target": "vanguard" },
+      { "id": "vanguard_br", "label": "Vanguard Group", "type": "owner", "depth": 2, "share": 9.0, "target": "blackrock" },
+      { "id": "statestreet_br", "label": "State Street Corp", "type": "owner", "depth": 2, "share": 4.2, "target": "blackrock" },
+      { "id": "vanguard_ss", "label": "Vanguard Group", "type": "owner", "depth": 2, "share": 8.2, "target": "statestreet" },
+      { "id": "blackrock_ss", "label": "BlackRock, Inc.", "type": "owner", "depth": 2, "share": 6.8, "target": "statestreet" }
+    ],
+    "links": [
+      { "source": "vanguard", "target": "target", "value": 9.1 },
+      { "source": "blackrock", "target": "target", "value": 7.6 },
+      { "source": "statestreet", "target": "target", "value": 4.3 },
+      { "source": "retail", "target": "target", "value": 79.0 },
+      { "source": "vanguard_funds", "target": "vanguard", "value": 100.0 },
+      { "source": "vanguard_br", "target": "blackrock", "value": 9.0 },
+      { "source": "statestreet_br", "target": "blackrock", "value": 4.2 },
+      { "source": "vanguard_ss", "target": "statestreet", "value": 8.2 },
+      { "source": "blackrock_ss", "target": "statestreet", "value": 6.8 }
+    ]
+  }
+}

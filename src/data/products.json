@@ -1,0 +1,20 @@
+[
+  {
+    "id": "coca_cola",
+    "name": "Coca-Cola",
+    "price": 10000,
+    "currency": "VND",
+    "color": "#e11d48",
+    "tagline": "Real Magic",
+    "tagline_vi": "Phép màu đích thực"
+  },
+  {
+    "id": "pepsi",
+    "name": "Pepsi",
+    "price": 10000,
+    "currency": "VND",
+    "color": "#2563eb",
+    "tagline": "Thirsty for More",
+    "tagline_vi": "Đã quá Pepsi ơi"
+  }
+]

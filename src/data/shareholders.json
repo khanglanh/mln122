@@ -1,0 +1,55 @@
+{
+  "coca_cola": [
+    {
+      "name": "Berkshire Hathaway",
+      "direct": 9.2,
+      "indirect": 0.0,
+      "source": "Direct investment portfolio",
+      "source_vi": "Danh mục đầu tư trực tiếp"
+    },
+    {
+      "name": "Vanguard Group",
+      "direct": 8.5,
+      "indirect": 1.1,
+      "source": "Indirectly held via index funds and cross-investments",
+      "source_vi": "Sở hữu gián tiếp qua các quỹ chỉ số và đầu tư chéo"
+    },
+    {
+      "name": "BlackRock, Inc.",
+      "direct": 7.1,
+      "indirect": 0.9,
+      "source": "Vanguard holds 9% of BlackRock shares",
+      "source_vi": "Vanguard nắm giữ 9% cổ phần của BlackRock"
+    },
+    {
+      "name": "State Street Corp",
+      "direct": 4.0,
+      "indirect": 0.6,
+      "source": "Vanguard & BlackRock combined own 15% of State Street",
+      "source_vi": "Vanguard & BlackRock cùng sở hữu 15% của State Street"
+    }
+  ],
+  "pepsi": [
+    {
+      "name": "Vanguard Group",
+      "direct": 9.1,
+      "indirect": 1.2,
+      "source": "Indirectly held via index funds",
+      "source_vi": "Sở hữu gián tiếp qua các quỹ chỉ số"
+    },
+    {
+      "name": "BlackRock, Inc.",
+      "direct": 7.6,
+      "indirect": 0.9,
+      "source": "Vanguard holds 9% of BlackRock shares",
+      "source_vi": "Vanguard nắm giữ 9% cổ phần của BlackRock"
+    },
+    {
+      "name": "State Street Corp",
+      "direct": 4.3,
+      "indirect": 0.6,
+      "source": "Vanguard & BlackRock combined own 15% of State Street",
+      "source_vi": "Vanguard & BlackRock cùng sở hữu 15% của State Street"
+    }
+  ]
+}

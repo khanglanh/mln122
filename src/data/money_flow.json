@@ -1,0 +1,66 @@
+{
+  "currency": "VND",
+  "total_price": 10000,
+  "steps": [
+    {
+      "id": "customer",
+      "name": "Customer",
+      "name_vi": "Khách hàng",
+      "keep": 0,
+      "flow_to": "store",
+      "details": "Initiates purchase by paying 10,000 VND.",
+      "details_vi": "Thực hiện mua hàng và trả 10.000 Đ."
+    },
+    {
+      "id": "store",
+      "name": "Convenience Store",
+      "name_vi": "Cửa hàng tiện lợi",
+      "keep": 3000,
+      "flow_to": "distributor",
+      "breakdown": [
+        { "label": "Rent", "label_vi": "Mặt bằng", "amount": 1000 },
+        { "label": "Electricity", "label_vi": "Điện nước", "amount": 600 },
+        { "label": "Employees", "label_vi": "Nhân viên", "amount": 900 },
+        { "label": "Store Profit", "label_vi": "Lợi nhuận cửa hàng", "amount": 500 }
+      ],
+      "details": "Keeps 3,000 VND to cover operating costs and local profit.",
+      "details_vi": "Giữ lại 3.000 Đ để chi trả chi phí vận hành và lợi nhuận tại chỗ."
+    },
+    {
+      "id": "distributor",
+      "name": "Distributor",
+      "name_vi": "Nhà phân phối",
+      "keep": 2000,
+      "flow_to": "split",
+      "breakdown": [
+        { "label": "Logistics", "label_vi": "Vận chuyển", "amount": 900 },
+        { "label": "Transportation", "label_vi": "Xe cộ", "amount": 600 },
+        { "label": "Warehouse", "label_vi": "Kho bãi", "amount": 500 }
+      ],
+      "details": "Keeps 2,000 VND for wholesaling and logistics.",
+      "details_vi": "Giữ lại 2.000 Đ cho khâu bán buôn và logistics."
+    },
+    {
+      "id": "real_economy",
+      "name": "Real Economy / Brands",
+      "name_vi": "Kinh tế thực / Thương hiệu",
+      "portion": 3000,
+      "breakdown": [
+        { "label": "Factory", "label_vi": "Nhà máy", "amount": 1000 },
+        { "label": "Raw Materials", "label_vi": "Nguyên liệu", "amount": 800 },
+        { "label": "Workers", "label_vi": "Lương công nhân", "amount": 700 },
+        { "label": "Production & Marketing", "label_vi": "Sản xuất & Tiếp thị", "amount": 500 }
+      ],
+      "details": "3,000 VND goes directly to manufacturing, materials, and worker wages.",
+      "details_vi": "3.000 Đ đi thẳng vào sản xuất, nguyên liệu và tiền lương công nhân."
+    },
+    {
+      "id": "corporate_profit",
+      "name": "Corporate Net Profit",
+      "name_vi": "Lợi nhuận ròng doanh nghiệp",
+      "portion": 2000,
+      "details": "2,000 VND represents net profit distributed to capital owners and shareholders.",
+      "details_vi": "2.000 Đ đại diện cho lợi nhuận ròng được phân phối lại cho các chủ sở hữu tư bản."
+    }
+  ]
+}

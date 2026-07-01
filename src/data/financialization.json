@@ -1,0 +1,34 @@
+{
+  "warning_threshold": 80,
+  "warnings": {
+    "en": "Financial investment is becoming dominant. Capital is shifting away from physical production.",
+    "vi": "Đầu tư tài chính đang trở nên lấn át. Tư bản đang chuyển dịch xa khỏi sản xuất vật chất."
+  },
+  "bubble_threshold": 100,
+  "bubble_msg": {
+    "en": "Speculative Bubble! Productive capacity has shrunk to critical levels, and assets are highly inflated.",
+    "vi": "Bóng bóng đầu cơ! Năng lực sản xuất co hẹp về mức tới hạn, tài sản bị thổi phồng quá mức."
+  },
+  "metrics_description": {
+    "productive_economy": {
+      "name": "Productive Economy",
+      "name_vi": "Kinh tế sản xuất",
+      "unit": "%"
+    },
+    "financial_assets": {
+      "name": "Financial Assets Valuation",
+      "name_vi": "Định giá tài sản tài chính",
+      "unit": "x Index"
+    },
+    "employment": {
+      "name": "Productive Employment",
+      "name_vi": "Việc làm sản xuất",
+      "unit": "Workers"
+    },
+    "speculative_activity": {
+      "name": "Speculative Activity",
+      "name_vi": "Hoạt động đầu cơ",
+      "unit": "Volume"
+    }
+  }
+}
