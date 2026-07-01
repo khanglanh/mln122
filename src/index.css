@@ -89,3 +89,38 @@
 .glow-bg {
   animation: pulseGlow 8s infinite ease-in-out;
 }
+
+/* Custom animations for flow lines and icons */
+@keyframes flowLeftRight {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-flow-left-right {
+  animation: flowLeftRight 2s infinite linear;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s infinite linear;
+}

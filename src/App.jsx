@@ -83,7 +83,7 @@ function App() {
           <Hero onStartClick={() => scrollToRef(act1Ref)} isEnglish={isEnglish} />
         </div>
         <div ref={act1Ref}>
-          <Act1 isEnglish={isEnglish} />
+          <Act1 isEnglish={isEnglish} onContinue={() => scrollToRef(act2Ref)} />
         </div>
         <div ref={act2Ref}>
           <Act2 isEnglish={isEnglish} />

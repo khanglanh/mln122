@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, DollarSign } from 'lucide-react';
+import { Sparkles, DollarSign, ArrowRight } from 'lucide-react';
 import MoneyFlowAnimation from '../components/MoneyFlowAnimation';
 import productsData from '../data/products.json';
 
-export default function Act1({ isEnglish }) {
+export default function Act1({ isEnglish, onContinue }) {
   const cokePrice = productsData.find(p => p.id === 'coca_cola')?.price || 13000;
   const pepsiPrice = productsData.find(p => p.id === 'pepsi')?.price || 15000;
 
   const [selectedBrand, setSelectedBrand] = useState(null);
+  const [isFlowComplete, setIsFlowComplete] = useState(false);
 
   const selectBrand = (brandId) => {
     const brand = productsData.find(p => p.id === brandId);
     setSelectedBrand(brand);
+    setIsFlowComplete(false);
+  };
+
+  const handleBackToSelect = () => {
+    setSelectedBrand(null);
+    setIsFlowComplete(false);
   };
 
   return (
@@ -123,17 +130,59 @@ export default function Act1({ isEnglish }) {
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="w-full"
+            className="w-full space-y-8"
           >
-            <div className="flex justify-start mb-4">
+            <div className="flex justify-start">
               <button 
-                onClick={() => setSelectedBrand(null)}
+                onClick={handleBackToSelect}
                 className="px-4 py-2 text-xs font-semibold bg-white/5 hover:bg-white/10 text-gray-300 rounded-lg border border-white/10 cursor-pointer"
               >
                 {isEnglish ? "← Back to Brand Selection" : "← Quay lại chọn thương hiệu"}
               </button>
             </div>
-            <MoneyFlowAnimation brand={selectedBrand} isEnglish={isEnglish} />
+            
+            <MoneyFlowAnimation 
+              brand={selectedBrand} 
+              isEnglish={isEnglish} 
+              onComplete={() => setIsFlowComplete(true)} 
+            />
+
+            {isFlowComplete && (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ type: "spring", stiffness: 100, delay: 0.5 }}
+                className="max-w-2xl mx-auto w-full mt-10"
+              >
+                <div className="glass-panel rounded-2xl p-8 border-2 border-red-500/20 bg-gradient-to-b from-red-950/10 via-slate-950/50 to-slate-950/80 text-center relative overflow-hidden shadow-2xl">
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-48 bg-red-500/5 rounded-full blur-3xl pointer-events-none animate-pulse" />
+                  
+                  <div className="w-12 h-12 bg-red-500/10 border border-red-500/20 rounded-full flex items-center justify-center text-red-400 mx-auto mb-4">
+                    <DollarSign size={24} />
+                  </div>
+                  
+                  <h3 className="text-xl md:text-2xl font-black mb-3 tracking-tight text-red-400">
+                    {isEnglish ? "We successfully traced the money." : "Chúng ta đã theo dấu dòng tiền thành công."}
+                  </h3>
+                  
+                  <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 max-w-lg mx-auto">
+                    {isEnglish
+                      ? "Half of your payment goes to retail, shipping, and storage. Another portion sustains the factory and workforce. But one crucial mystery remains: who actually receives the corporate profits and dividends?"
+                      : "Một nửa số tiền bạn trả dùng cho bán lẻ, giao nhận và lưu kho. Một phần khác duy trì nhà máy và người lao động. Nhưng một câu hỏi cốt lõi vẫn chưa được trả lời: ai thực sự nhận được phần thặng dư lợi nhuận khổng lồ này?"}
+                  </p>
+
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-6" />
+
+                  <button
+                    onClick={onContinue}
+                    className="px-8 py-3.5 bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-500 hover:to-purple-500 text-white font-bold rounded-xl shadow-lg shadow-red-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 mx-auto cursor-pointer border border-white/10"
+                  >
+                    <span>{isEnglish ? "Continue Investigation" : "Tiếp tục điều tra"}</span>
+                    <ArrowRight size={16} />
+                  </button>
+                </div>
+              </motion.div>
+            )}
           </motion.div>
         )}
 
