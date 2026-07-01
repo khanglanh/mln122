@@ -162,7 +162,7 @@ export default function Act1({ isEnglish, onContinue }) {
                   <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 max-w-lg mx-auto">
                     {isEnglish
                       ? "Half of your payment goes to retail, shipping, and storage. Another portion sustains the factory and workforce. But one crucial mystery remains: who actually receives the corporate profits and dividends?"
-                      : "Một nửa số tiền bạn trả dùng cho bán lẻ, giao nhận và lưu kho. Một phần khác duy trì nhà máy và người lao động. Nhưng một câu hỏi cốt lõi vẫn chưa được trả lời: ai thực sự nhận được phần thặng dư lợi nhuận khổng lồ này?"}
+                      : "Một nửa số tiền bạn trả dùng cho bán lẻ, giao nhận và lưu kho. Một phần khác duy trì nhà máy và người lao động. Nhưng một câu hỏi cốt lõi vẫn chưa được trả lời: ai thực sự nhận được phần thặng dư lợi nhuận này?"}
                   </p>
 
                   <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-6" />

@@ -159,7 +159,6 @@ export default function MoneyFlowAnimation({ brand, isEnglish, onComplete }) {
             <div className="glass-panel rounded-2xl p-6 relative border border-white/5 flex flex-col justify-between overflow-hidden">
               <div className="flex justify-between items-center mb-6">
                 <span className="text-[10px] font-mono text-blue-400 uppercase tracking-widest">{isEnglish ? "Phase 1: Local Distribution" : "Giai đoạn 1: Phân phối thực tế"}</span>
-                <span className="text-xs text-gray-500 font-mono">{formatPrice(totalPrice)} Base Transaction</span>
               </div>
 
               {/* Top Horizontal Flow nodes */}

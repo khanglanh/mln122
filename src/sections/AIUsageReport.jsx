@@ -531,34 +531,6 @@ export default function AIUsageReport({ isEnglish }) {
           </div>
         </motion.div>
 
-        {/* Section Footer Quote & Human Verified Badge */}
-        <div className="text-center mt-20 space-y-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto"
-          >
-            <p className="text-gray-400 font-serif italic text-base md:text-lg leading-relaxed relative px-8">
-              <span className="absolute left-0 top-0 text-4xl text-purple-500/20 font-serif">“</span>
-              {isEnglish
-                ? "AI accelerates the creative process. But responsibility for content, design, and accuracy always rests with the human creator."
-                : "AI giúp tăng tốc quá trình sáng tạo. Nhưng trách nhiệm về nội dung, thiết kế và tính chính xác luôn thuộc về người thực hiện."}
-              <span className="absolute right-0 bottom-0 text-4xl text-purple-500/20 font-serif">”</span>
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold font-mono tracking-widest shadow-[0_0_15px_rgba(16,185,129,0.05)]"
-          >
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            HUMAN VERIFIED ✓
-          </motion.div>
-        </div>
-
       </div>
     </section>
   );

@@ -46,7 +46,7 @@ function App() {
             {isEnglish ? "Act 1: Money Flow" : "Hồi 1: Theo dấu dòng tiền"}
           </button>
           <button onClick={() => scrollToRef(act2Ref)} className="hover:text-purple-400 transition-colors cursor-pointer">
-            {isEnglish ? "Act 2: Ownership" : "Hồi 2: Ai là ông chủ thật sự"}
+            {isEnglish ? "Act 2: Ownership" : "Hồi 2: Ai là ông chủ thật sự?"}
           </button>
           <button onClick={() => scrollToRef(act3Ref)} className="hover:text-purple-400 transition-colors cursor-pointer">
             {isEnglish ? "Act 3: Real vs Financial" : "Hồi 3: Tại sao lợi nhuận chảy về tài chính?"}
@@ -55,7 +55,7 @@ function App() {
             {isEnglish ? "Act 4: Simulator" : "Hồi 4: Điều gì xảy ra khi tài chính phát triển quá mức?"}
           </button>
           <button onClick={() => scrollToRef(conclusionRef)} className="hover:text-purple-400 transition-colors cursor-pointer">
-            {isEnglish ? "Conclusion" : "Kết luận"}
+            {isEnglish ? "The End" : "Kết thúc"}
           </button>
           <button onClick={() => scrollToRef(aiReportRef)} className="hover:text-purple-400 transition-colors cursor-pointer">
             {isEnglish ? "AI Report" : "Báo cáo AI"}
