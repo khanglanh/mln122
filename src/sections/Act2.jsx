@@ -14,7 +14,7 @@ export default function Act2({ isEnglish }) {
             whileInView={{ opacity: 1 }}
             className="text-xs uppercase font-semibold text-purple-400 tracking-widest bg-purple-500/10 px-3.5 py-1.5 rounded-full border border-purple-500/20"
           >
-            {isEnglish ? "Act 2: Who Really Owns the Company?" : "Chương 2: Ai thực sự nắm giữ tập đoàn?"}
+            {isEnglish ? "Act 2: Who Really Owns the Company?" : "Hồi 2: Ai là ông chủ thật sự"}
           </motion.span>
           
           <motion.h2 

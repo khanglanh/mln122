@@ -14,7 +14,7 @@ export default function Act4({ isEnglish }) {
             whileInView={{ opacity: 1 }}
             className="text-xs uppercase font-semibold text-amber-400 tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20"
           >
-            {isEnglish ? "Act 4: Financialization Simulator" : "Chương 4: Trình mô phỏng Tài chính hóa"}
+            {isEnglish ? "Act 4: Financialization Simulator" : "Hồi 4: Điều gì xảy ra khi tài chính phát triển quá mức?"}
           </motion.span>
           
           <motion.h2 

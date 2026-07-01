@@ -5,6 +5,9 @@ import MoneyFlowAnimation from '../components/MoneyFlowAnimation';
 import productsData from '../data/products.json';
 
 export default function Act1({ isEnglish }) {
+  const cokePrice = productsData.find(p => p.id === 'coca_cola')?.price || 13000;
+  const pepsiPrice = productsData.find(p => p.id === 'pepsi')?.price || 15000;
+
   const [selectedBrand, setSelectedBrand] = useState(null);
 
   const selectBrand = (brandId) => {
@@ -13,17 +16,17 @@ export default function Act1({ isEnglish }) {
   };
 
   return (
-    <section id="act1" className="min-h-screen py-20 px-4 md:px-8 bg-[#0B1020] relative flex flex-col justify-center border-t border-white/5">
+    <section id="act1" className="min-h-screen py-14 px-4 md:px-8 bg-[#0B1020] relative flex flex-col justify-center border-t border-white/5">
       <div className="max-w-6xl mx-auto w-full relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-xs uppercase font-semibold text-blue-400 tracking-widest bg-blue-500/10 px-3.5 py-1.5 rounded-full border border-blue-500/20"
           >
-            {isEnglish ? "Act 1: Follow the Money" : "Chương 1: Đi theo dòng tiền"}
+            {isEnglish ? "Act 1: Follow the Money" : "Hồi 1: Theo dấu dòng tiền"}
           </motion.span>
           
           <motion.h2 
@@ -79,7 +82,7 @@ export default function Act1({ isEnglish }) {
 
               <div className="flex justify-between items-center bg-slate-950/60 p-3 rounded-xl border border-white/5">
                 <span className="text-xs font-semibold text-gray-400">{isEnglish ? "Retail Price" : "Giá bán lẻ"}</span>
-                <span className="text-sm font-bold text-red-400">10,000 VND</span>
+                <span className="text-sm font-bold text-red-400">{cokePrice.toLocaleString()} VND</span>
               </div>
             </motion.div>
 
@@ -111,7 +114,7 @@ export default function Act1({ isEnglish }) {
 
               <div className="flex justify-between items-center bg-slate-950/60 p-3 rounded-xl border border-white/5">
                 <span className="text-xs font-semibold text-gray-400">{isEnglish ? "Retail Price" : "Giá bán lẻ"}</span>
-                <span className="text-sm font-bold text-blue-400">10,000 VND</span>
+                <span className="text-sm font-bold text-blue-400">{pepsiPrice.toLocaleString()} VND</span>
               </div>
             </motion.div>
 

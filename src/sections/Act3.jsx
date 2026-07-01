@@ -85,7 +85,7 @@ export default function Act3({ isEnglish }) {
             whileInView={{ opacity: 1 }}
             className="text-xs uppercase font-semibold text-purple-400 tracking-widest bg-purple-500/10 px-3.5 py-1.5 rounded-full border border-purple-500/20"
           >
-            {isEnglish ? "Act 3: Real Economy vs Financial Economy" : "Chương 3: Kinh tế thực và Kinh tế tài chính"}
+            {isEnglish ? "Act 3: Real Economy vs Financial Economy" : "Hồi 3: Tại sao lợi nhuận chảy về tài chính?"}
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 15 }}

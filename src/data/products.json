@@ -2,7 +2,7 @@
   {
     "id": "coca_cola",
     "name": "Coca-Cola",
-    "price": 10000,
+    "price": 13000,
     "currency": "VND",
     "color": "#e11d48",
     "tagline": "Real Magic",
@@ -11,7 +11,7 @@
   {
     "id": "pepsi",
     "name": "Pepsi",
-    "price": 10000,
+    "price": 15000,
     "currency": "VND",
     "color": "#2563eb",
     "tagline": "Thirsty for More",
