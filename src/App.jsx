@@ -4,6 +4,7 @@ import Act1 from './sections/Act1';
 import Act2 from './sections/Act2';
 import Act3 from './sections/Act3';
 import Act4 from './sections/Act4';
+import AIUsageReport from './sections/AIUsageReport';
 import Conclusion from './sections/Conclusion';
 import { Globe, BookOpen } from 'lucide-react';
 import logo from './assets/logo.png';
@@ -16,6 +17,7 @@ function App() {
   const act2Ref = useRef(null);
   const act3Ref = useRef(null);
   const act4Ref = useRef(null);
+  const aiReportRef = useRef(null);
   const conclusionRef = useRef(null);
 
   const scrollToRef = (ref) => {
@@ -54,6 +56,9 @@ function App() {
           </button>
           <button onClick={() => scrollToRef(conclusionRef)} className="hover:text-purple-400 transition-colors cursor-pointer">
             {isEnglish ? "Conclusion" : "Kết luận"}
+          </button>
+          <button onClick={() => scrollToRef(aiReportRef)} className="hover:text-purple-400 transition-colors cursor-pointer">
+            {isEnglish ? "AI Report" : "Báo cáo AI"}
           </button>
         </nav>
 
@@ -96,6 +101,9 @@ function App() {
         </div>
         <div ref={conclusionRef}>
           <Conclusion onReset={resetAll} isEnglish={isEnglish} />
+        </div>
+        <div ref={aiReportRef}>
+          <AIUsageReport isEnglish={isEnglish} />
         </div>
       </main>
 
